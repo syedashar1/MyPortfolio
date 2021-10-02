@@ -15,7 +15,7 @@ async function connect() {
     }
     await mongoose.disconnect();
   }
-  const db = await mongoose.connect(process.env.MONGODB_URI2 || 'mongodb+srv://ashar1:ashar1@cluster0.ybb8j.mongodb.net/AsharPortfolio?retryWrites=true&w=majority'  , {
+  const db = await mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -26,19 +26,14 @@ async function connect() {
 
 async function disconnect() {
   if (connection.isConnected) {
-    // if (process.env.NODE_ENV === 'production') {
-    //   await mongoose.disconnect();
-    //   connection.isConnected = false;
-    // } else {
-    //   console.log('not disconnected');
-    // }
-    await mongoose.disconnect();
-    connection.isConnected = false;
-    console.log('connection disconnected');
+    if (process.env.NODE_ENV === 'production') {
+      await mongoose.disconnect();
+      connection.isConnected = false;
+    } else {
+      console.log('not disconnected');
+    }
   }
 }
-
-
 
 function convertDocToObj(doc) {
   doc._id = doc._id.toString();
@@ -48,5 +43,4 @@ function convertDocToObj(doc) {
 }
 
 const db = { connect, disconnect, convertDocToObj };
-
 export default db;
