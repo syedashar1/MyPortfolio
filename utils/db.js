@@ -15,7 +15,7 @@ async function connect() {
     }
     await mongoose.disconnect();
   }
-  const db = await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ashar1:ashar1@cluster0.ybb8j.mongodb.net/AsharPortfolio?retryWrites=true&w=majority'  , {
+  const db = await mongoose.connect(process.env.MONGODB_URI2 || 'mongodb+srv://ashar1:ashar1@cluster0.ybb8j.mongodb.net/AsharPortfolio?retryWrites=true&w=majority'  , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
