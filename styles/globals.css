@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.main-card{
+  margin: auto;
+  width: 900px;
+  min-width : 400px;
+  
+}
+.card-shadow{
+  -webkit-box-shadow: -16px 26px 150px -51px rgba(0,0,0,0.9);
+  -moz-box-shadow: -16px 26px 150px -51px rgba(0,0,0,0.9);
+  box-shadow: -16px 26px 150px -51px rgba(0,0,0,0.9);
+}
+
+.small-bio{
+  font-weight: 400;
+  color: black;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+}
+
+
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: rgb(88, 88, 88);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+
+.gap{
+  height: 0px;
+}
+
+.hide{
+
+}
+
+.carouselpic {
+  max-height: 600px;
+  min-height:400px;
+  text-align:center;
+}
+
+
+@media only screen and (max-width: 770px) {
+  .gap{
+    height: 450px;
+  }
+  .hide{
+    display: none;
+  }
+
+  .carouselpic {
+    max-height: auto ;
+    min-height: auto;
+    text-align:'center';
+    width: 100%;
+    height: auto;
+
+  }
+
+
+
+}
